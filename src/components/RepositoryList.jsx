@@ -10,19 +10,19 @@ export function RepositoryList() {
 
     useEffect(() => {
         fetch('https://api.github.com/orgs/rocketseat/repos')
-        .then(response => response.json())
-        .then(data=> setRepositories(data)) 
+            .then(response => response.json())
+            .then(data => setRepositories(data))
     }, [])
-    
+
     return (
         <section className="list">
             <h1>Lista de Repositórios</h1>
 
             <ul>
-                {repositories.map(repository =>{
-                    return <RepositoryItem key={repository.name} repository={repository} />    
-                } )}
-                
+                {repositories.map(repository => {
+                    return <RepositoryItem key={repository.name} repository={repository} />
+                })}
+
             </ul>
 
 
