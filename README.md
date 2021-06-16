@@ -1,2 +1,0 @@
-# ReactJs
- Curso rocketseat
