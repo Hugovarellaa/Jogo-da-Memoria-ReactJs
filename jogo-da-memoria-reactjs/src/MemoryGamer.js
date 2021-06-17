@@ -1,18 +1,25 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
+import GameBoard from './components/GameBoard';
 import GameOver from './components/GameOver'
-
-export default function MemoryGamer () {
+import game from './game/game'
+export default function MemoryGamer() {
     const [gameOver, setGameOver] = useState(false)
-    
+    const [cards, setCards] = useState([])
+
+    useEffect(()=>{
+        setCards(game.createCardsFromTechs())
+    },[])
+
     function restart() {
         setGameOver(false)
     }
 
     return (
         <div>
-           <GameOver show={gameOver} handleRestart={restart}> 
+            <GameBoard cards={cards}> </GameBoard>
+            <GameOver show={gameOver} handleRestart={restart}>
 
-           </GameOver>
+            </GameOver>
         </div>
     )
 }

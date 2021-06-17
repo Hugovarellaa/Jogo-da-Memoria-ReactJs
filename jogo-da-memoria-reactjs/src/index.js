@@ -4,10 +4,5 @@ import './index.css';
 import MemoryGamer from './MemoryGamer';
 
 
-ReactDOM.render(
-  
-    <MemoryGamer />
-  ,
-  document.getElementById('root')
-);
+ReactDOM.render(<MemoryGamer />, document.getElementById('root'));
 
